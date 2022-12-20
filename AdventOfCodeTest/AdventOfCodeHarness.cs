@@ -1,3 +1,5 @@
+using System;
+using AdventOfCode;
 using NUnit.Framework;
 
 public class Tests
@@ -10,6 +12,7 @@ public class Tests
     [Test]
     public void Test1()
     {
-        Assert.Pass();
+        var result = FindElfWithMostCalories.Find();
+        Console.WriteLine($"Answer is: {result}");
     }
 }

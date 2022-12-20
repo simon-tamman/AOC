@@ -7,17 +7,17 @@ namespace AdventOfCode
         public IEnumerable<FirstElf> Load()
         {
             var raw = new FirstRawDataSource();
-            FirstElf? elf = null;
+            int id = 1;
+            var elf = new FirstElf(id++);
             foreach (var line in raw.LoadRawData())
             {
                 if (string.IsNullOrEmpty(line))
                 {
-                    if (elf != null) yield return elf;
-                    elf = new FirstElf();
+                    yield return elf;
+                    elf = new FirstElf(id++);
                 }
                 else
                 {
-                    if (elf == null) throw new WtfException("elf should not be null (the first line is empty?)");
                     elf.AddFood(int.Parse(line));
                 }
             }
