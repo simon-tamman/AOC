@@ -13,7 +13,7 @@ namespace AdventOfCode
             {
                 if (elf.TotalCalories > bestElf.TotalCalories) bestElf = elf;
             }
-            return bestElf.Id;
+            return bestElf.TotalCalories;
         }
     }
 }
